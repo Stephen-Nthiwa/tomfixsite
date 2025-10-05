@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - TOMFIXSITE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-login-body">
+    <div class="admin-login-container">
+        <div class="admin-login-form">
+            <h2>Admin Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="password">Admin Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn primary-btn">Login</button>
+            </form>
+            <p class="login-note">Default password: tomfix123</p>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            
+            if (adminLogin(password)) {
+                window.location.href = 'admin.html';
+            } else {
+                alert('Invalid password!');
+            }
+        });
+    </script>
+</body>
+</html>
