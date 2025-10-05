@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Gallery - TOMFIXSITE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1><a href="index.html">TOMFIXSITE</a></h1>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="gallery.html" class="active">Gallery</a>
+                    <a href="request.html">Request Poster</a>
+                    <a href="admin.html" class="admin-link">Admin</a>
+                </div>
+                <div class="contact-buttons">
+                    <a href="tel:+254790782862" class="contact-btn call-btn">
+                        <i class="fas fa-phone"></i> Call
+                    </a>
+                    <a href="https://wa.me/254790782862" class="contact-btn whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Poster Gallery</h2>
+            
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All Posters</button>
+                <button class="filter-btn" data-category="public">Public</button>
+                <button class="filter-btn" data-category="private">Private</button>
+                <button class="filter-btn" data-category="professional">Professional</button>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search posters by title or tag...">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Posters loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <div id="poster-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="modal-body">
+                <!-- Poster details loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TOMFIXSITE</h3>
+                    <p>Custom poster designs for all your needs</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="footer-contact">
+                        <a href="tel:+254790782862"><i class="fas fa-phone"></i> +254 790 782862</a>
+                        <a href="https://wa.me/254790782862" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TOMFIXSITE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>
