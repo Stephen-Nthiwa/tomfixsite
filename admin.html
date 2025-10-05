@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - TOMFIXSITE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>TOMFIXSITE Admin</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">View Site</a>
+                    <a href="#" id="logout-btn">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="admin-container">
+        <div class="admin-sidebar">
+            <ul class="admin-menu">
+                <li><a href="#dashboard" class="admin-menu-item active" data-tab="dashboard">Dashboard</a></li>
+                <li><a href="#upload" class="admin-menu-item" data-tab="upload">Upload Poster</a></li>
+                <li><a href="#manage" class="admin-menu-item" data-tab="manage">Manage Posters</a></li>
+            </ul>
+        </div>
+
+        <div class="admin-content">
+            <!-- Dashboard Tab -->
+            <div id="dashboard-tab" class="admin-tab active">
+                <h2>Dashboard Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Posters</h3>
+                        <p id="total-posters">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Public Posters</h3>
+                        <p id="public-posters">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Private Posters</h3>
+                        <p id="private-posters">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Poster Tab -->
+            <div id="upload-tab" class="admin-tab">
+                <h2>Upload New Poster</h2>
+                <form id="upload-poster-form" class="admin-form">
+                    <div class="form-group">
+                        <label for="poster-title">Poster Title *</label>
+                        <input type="text" id="poster-title" name="title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="poster-category">Category *</label>
+                        <select id="poster-category" name="category" required>
+                            <option value="public">Public</option>
+                            <option value="private">Private</option>
+                            <option value="professional">Professional</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="poster-description">Description *</label>
+                        <textarea id="poster-description" name="description" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="poster-tags">Tags (comma separated)</label>
+                        <input type="text" id="poster-tags" name="tags" placeholder="business, corporate, event">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="poster-image">Upload Poster Image *</label>
+                        <input type="file" id="poster-image" name="image" accept="image/*" required>
+                        <small>Select image to upload (JPG, PNG, etc.)</small>
+                        <div id="image-preview" class="image-preview"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="poster-download">Download URL *</label>
+                        <input type="url" id="poster-download" name="downloadUrl" required placeholder="https://drive.google.com/your-poster.pdf">
+                        <small>Link where users can download the high-quality version</small>
+                    </div>
+                    
+                    <button type="submit" class="btn primary-btn" id="upload-btn">
+                        <i class="fas fa-upload"></i> Upload Poster
+                    </button>
+                </form>
+            </div>
+
+            <!-- Manage Posters Tab -->
+            <div id="manage-tab" class="admin-tab">
+                <h2>Manage Posters</h2>
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Image</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="posters-table-body">
+                            <!-- Posters loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-success-message" class="success-message">
+        <p>Operation completed successfully!</p>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
